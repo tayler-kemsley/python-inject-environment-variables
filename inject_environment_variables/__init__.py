@@ -11,7 +11,10 @@ class EnvironmentVariableInjector:
 
     def __enter__(self):
         self.original_variables = copy(os.environ)
-        os.environ = {**os.environ, **self.input_variables}  # noqa: B003
+        new_environ = copy(os.environ)
+        for k, v in self.input_variables.items():
+            new_environ[k] = v
+        os.environ = new_environ  # noqa: B003
 
     def __exit__(self, *args):
         if self.original_variables:

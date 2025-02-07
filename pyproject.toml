@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "inject-environment-variables"
-version = "1.0.1"
+version = "1.1.0"
 description = "Simple tools for temporatily injecting variables into the environment"
 readme = "README.md"
 authors = [{ name = "Tayler Kemsley"}]
